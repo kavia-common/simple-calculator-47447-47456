@@ -1,38 +1,39 @@
-# sv
+# Simple Calculator (Svelte)
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A modern, Ocean Professional-themed calculator UI built with SvelteKit. It supports basic arithmetic, percent, continuous equals, and full keyboard shortcuts.
 
-## Creating a project
+## Run locally
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Install dependencies: `npm install`
+- Start dev server (port 3000): `npm run dev`
+- Build: `npm run build`
+- Preview production build: `npm run preview`
 
-```bash
-# create a new project in the current directory
-npx sv create
+The app runs on http://localhost:3000 by default (configured in vite.config.ts).
 
-# create a new project in my-app
-npx sv create my-app
-```
+## Features
 
-## Developing
+- Operations: add, subtract, multiply, divide
+- Percent: current entry becomes percent of previous when an operator is active; otherwise divides current by 100
+- Decimal input with validation (no multiple decimals)
+- Clear (C), Backspace (CE), Toggle sign (±)
+- Immediate execution on operator press (simple calculator behavior)
+- Continuous equals: pressing = repeatedly repeats the last operation
+- Error handling: divide-by-zero shows "Error"; press C to reset
+- Responsive layout and accessible buttons (roles, aria-labels, status live region)
+- Keyboard support
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Keyboard shortcuts
 
-```bash
-npm run dev
+- Digits: 0–9
+- Decimal: . or ,
+- Operators: +, -, *, /
+- Percent: %
+- Equals: = or Enter/Return
+- Backspace: CE (delete last digit)
+- Escape: C (clear)
+- Toggle Sign: click ± button
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Environment
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+The app does not require any backend or external services. It respects VITE_* variables if present but does not depend on them.

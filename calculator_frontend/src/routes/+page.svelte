@@ -1,19 +1,23 @@
+<script lang="ts">
+    import Calculator from '../lib/Calculator.svelte';
+</script>
+
 <svelte:head>
-    <title>calculator_frontend</title>
+    <title>Simple Calculator</title>
+    <meta name="description" content="A modern Ocean Professional-themed simple calculator built with Svelte." />
 </svelte:head>
 
-<div class="container">
-    <p>calculator_frontend is being generated</p>
+<div class="page">
+    <Calculator />
 </div>
 
 <style>
-    .container {
-        text-align: center;
-    }
-
-    p {
-        margin: 0;
-        font-size: 2rem;
-        color: var(--color-text-primary);
+    .page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+        width: 100%;
+        padding: 1rem;
     }
 </style>
